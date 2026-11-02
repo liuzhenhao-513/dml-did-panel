@@ -20,6 +20,11 @@ The Study 3 estimation sample is included (trimmed and anonymised; see
 [`data/README.md`](data/README.md)), so the results can be reproduced exactly
 from a fresh clone. A synthetic dataset with a known effect is included as well.
 
+> **Scope.** This repository is a worked example of how to run panel DML-DID in
+> Python. It shows the estimation step only. Identification checks for the four
+> studies (parallel-trend and event-study tests, placebo tests) are reported in
+> the accompanying working papers and are not reproduced here.
+
 <p align="center"><img src="results/demo_synthetic.png" width="640" alt="DML estimates on synthetic data with true effect 0.5"></p>
 
 ---
@@ -229,7 +234,7 @@ In all four studies treatment starts in one year for the whole treated group (a 
 
 * **`wg_approx` is an approximation.** Demeaning a non-linear $g_0(X_{it})$ is not the same as $g_0$ of the demeaned $X$. Clarke & Polselli (2025) show that this works well in many settings, but `fd_exact` (first differences) and the correlated-random-effects variants `cre_general` / `cre_normal` are one config line away and make a useful robustness check.
 * **Homogeneous, static effect.** Like TWFE, the PLPR estimate is a single average effect over all post-treatment years. All four policies have a single treatment date, so the negative-weighting problem of TWFE under staggered adoption (Goodman-Bacon, 2021; de Chaisemartin & D'Haultfœuille, 2020) does not arise. Effects may still build up or fade over time. Event-study or group-time estimators (e.g. Callaway & Sant'Anna, 2021, available in `DoubleML` as `DoubleMLDIDMulti`) are the natural extension to show those dynamics.
-* **Identification still rests on (conditional) parallel trends.** DML makes the adjustment for controls flexible. It does not replace pre-trend checks or placebo tests.
+* **Identification still rests on (conditional) parallel trends.** DML makes the adjustment for controls flexible. It does not replace pre-trend checks or placebo tests. For the four studies these checks are in the working papers; in your own application, run them alongside the DML estimates.
 
 ---
 

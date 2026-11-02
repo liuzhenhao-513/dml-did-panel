@@ -1,0 +1,11 @@
+# Water resource tax reform (水资源税改革): Hebei pilot from July 2016, extended to Beijing, Tianjin,
+# Shanxi, Inner Mongolia, Shandong, Henan, Sichuan, Shaanxi and Ningxia from 1 December 2017.
+# treat = firm located in one of these 10 provinces; post = year >= 2018.
+name: study2_water_tax
+description: "Study 2 - Water resource tax reform (2018) on green innovation bubble"
+data_path: data/resource2green.dta
+y_col: CGI_bub        # corporate green innovation bubble (total)
+d_col: DID            # treat x post
+id_col: Stkcd
+time_col: year
+controls: [SIZE, LEV, ROA, SOE, INDBOARD, BOARD, GROWTH]

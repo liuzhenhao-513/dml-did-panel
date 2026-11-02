@@ -1,0 +1,11 @@
+# 2014 pilot of local government bond "self-issuance and self-repayment" (自发自还):
+# Shanghai, Zhejiang, Guangdong, Shenzhen, Jiangsu, Shandong, Beijing, Jiangxi, Ningxia, Qingdao.
+# treat = firm located in a pilot province (Shenzhen -> Guangdong, Qingdao -> Shandong); post = year >= 2014.
+name: study1_bond_pilot
+description: "Study 1 - Local bond self-issuance pilot (2014) on corporate investment"
+data_path: data/resource1band1.dta
+y_col: Invest3        # corporate investment level
+d_col: did            # treat x post
+id_col: id
+time_col: year
+controls: [Size, Lev, ROA, Growth, Indep, FirmAge, Top10, CashFlow]

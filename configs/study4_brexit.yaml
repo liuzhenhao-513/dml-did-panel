@@ -1,0 +1,11 @@
+# Brexit shock: UK referendum on 23 June 2016. treat = UK-headquartered firm, control = EU27-headquartered firm;
+# post = year >= 2016.
+# Sample: European firms from Orbis.
+name: study4_brexit
+description: "Study 4 - Brexit (2016) on firms' EU subsidiaries"
+data_path: data/resource4Europe.dta
+y_col: EU             # ln(1 + number of EU subsidiaries outside the home country)
+d_col: DID            # treat x post
+id_col: orbisID
+time_col: year
+controls: [Size, ROA, Lev, TobinQ, cashflow, 公司成立年限]   # 公司成立年限 = firm age

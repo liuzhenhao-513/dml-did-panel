@@ -1,0 +1,20 @@
+# Raw firm-level data comes from licensed databases and is not redistributed.
+data/*
+!data/README.md
+!data/study3_climate_pilot.dta
+
+# Local run logs
+results/_*
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

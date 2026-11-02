@@ -1,0 +1,10 @@
+# Climate-Adaptive City Pilot (气候适应型城市建设试点), NDRC & MOHURD, Feb 2017, 28 pilot areas.
+# treat = firm located in a pilot city; post = year >= 2017. Sample: A-share manufacturing firms.
+name: study3_climate_pilot
+description: "Study 3 - Climate-Adaptive City Pilot (2017) on supply chain resilience"
+data_path: data/study3_climate_pilot.dta   # shipped: trimmed, anonymised copy of the Study 3 panel
+y_col: SCR            # supply chain resilience index (entropy method)
+d_col: did            # treat x post
+id_col: id
+time_col: year
+controls: [Size, Lev, ROA, FirmAge, Dual, FIXED, Growth, Board]

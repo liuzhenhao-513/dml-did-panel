@@ -1,0 +1,11 @@
+# Synthetic panel with a known effect (theta = 0.5). Create it first:
+#   python make_synthetic_data.py
+name: demo_synthetic
+description: "Synthetic staggered DID (true effect = 0.5)"
+data_path: data/synthetic_did.csv
+y_col: y
+d_col: did
+id_col: firm_id
+time_col: year
+controls: [x1, x2, x3, x4, x5]
+true_effect: 0.5
